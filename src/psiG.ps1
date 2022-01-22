@@ -1,4 +1,5 @@
 # psiG Script
+# Version 1.0
 # Brought to you by Janzent Vapor :>>
 # https://github.com/devjvx/psiG
 
@@ -26,7 +27,7 @@ $ScriptDateTime = Get-Date -Format "yyyy/MM/dd HH:mm"
 $ScriptDateTimeNumbers = Get-Date -Format "yyyy-MM-dd_HH-mm"
 
 Write-Output "`n"
-Write-Output " [psiG] Running psiG Script."
+Write-Output " [psiG] Running psiG Script v1.0"
 
 Start-Sleep 3
 
@@ -72,14 +73,15 @@ Start-Sleep 5
 
 Clear-Host
 
-Write-Output "=========================="
-Write-Output "                 _ ______ "
-Write-Output "     ____  _____(_) ____/ "
-Write-Output "    / __ \/ ___/ / / __   "
-Write-Output "   / /_/ (__  ) / /_/ /   "
-Write-Output "  / .___/____/_/\____/    "
-Write-Output " /_/                      "
-Write-Output "=========================="
+Write-Output " =========================="
+Write-Output "                  _ ______ "
+Write-Output "      ____  _____(_) ____/ "
+Write-Output "     / __ \/ ___/ / / __   "
+Write-Output "    / /_/ (__  ) / /_/ /   "
+Write-Output "   / .___/____/_/\____/    "
+Write-Output "  /_/                        by Janzent V. :>>"
+Write-Output " =========================="
+Write-Output " v1.0 "
 
 Start-Sleep 5
 
@@ -148,13 +150,14 @@ Start-Sleep 2
 Write-Output "`n"
 Write-Output " [psiG] Retrieving Graphics Data..."
 try {
+    Start-Sleep 2
     Write-Output " [psiG] Attempting to retrieve Graphics Data."
     $ComputerGPU = Get-WmiObject win32_VideoController
     Write-Output " [psiG] Success! Graphics Data retrieval successful."
+    Write-Output " [psiG] Done!"
 } catch {
     Write-Output " [psiG] Error. Failed to retrieve Graphics Data."
 }
-Write-Output " [psiG] Done!"
 
 Start-Sleep 5
 
