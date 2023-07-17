@@ -48,7 +48,12 @@ Write-Output "                   \/__/                     \/__/    "
 Start-Sleep 2
 
 Write-Output "`n"
-Write-Output " Hello there!"
+Write-Output " Hello there."
+
+Start-Sleep 2
+
+Write-Output "`n"
+Write-Output " I'm a script that collects information about your computer that's summarized (and complete)!"
 
 Start-Sleep 2
 
@@ -67,15 +72,6 @@ Write-Output "`n"
 Write-Output " Great! Nice to meet you, $UserName."
 
 Start-Sleep 3
-
-# Write-Output "`n"
-# Write-Output " Quick question, do you prefer to export this as a text file or will you submitting this?"
-# Write-Output " Option 1: Text File"
-# Write-Output " Option 2: CSV File (for submission)"
-
-# $FileExportType = Read-Host " Enter your choice (1-2)"
-
-
 
 Write-Output "`n"
 Write-Output " [psiG] I'll be running the script for you now."
@@ -181,35 +177,68 @@ try {
     Write-Output " [psiG] Error. Failed to retrieve Graphics Data."
 }
 
-Start-Sleep 5
-
 Write-Output "`n"
 Write-Output " [psiG] Consolidating all data gathered..."
-try {
-    "[psiG Script]`nComputer Information Retrievel Script v1.1 (https://github.com/devjvx)" | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt
-    "`nComputer is used by: $UserName" | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    "`nScript ran at Date/Time: $ScriptDateTime `n" | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    "======================== OPERATING SYSTEM ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    "`nOperating System: $OS" | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    $ComputerOSBuild | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    "======================== MOTHERBOARD ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    $ComputerMobo | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    "======================== BIOS ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    $ComputerBIOS | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    "======================== CPU ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    $ComputerCPU  | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    "======================== MEMORY ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    $ComputerRAM  | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    # $ComputerRAM_Total  | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    "======================== STORAGE ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    $ComputerDisks  | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    "======================== GRAPHICS ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    $ComputerGPU  | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
-    "-------------------------------- END OF FILE --------------------------------" | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
 
-    Write-Output " [psiG] Done exporting to a file! See the location of the script."
-} catch {
-    Write-Output " [psiG] Error. Unable to export consolidated data. Check file permissions."
+
+Start-Sleep 5
+
+Clear-Host
+
+Write-Output " =========================="
+Write-Output "                  _ ______ "
+Write-Output "      ____  _____(_) ____/ "
+Write-Output "     / __ \/ ___/ / / __   "
+Write-Output "    / /_/ (__  ) / /_/ /   "
+Write-Output "   / .___/____/_/\____/    "
+Write-Output "  /_/                      "
+Write-Output " =========================="
+Write-Output " v1.1 "
+
+Start-Sleep 2
+
+Write-Output "`n"
+Write-Output " Quick question, do you prefer to export this as a text file or will you submitting this?"
+Write-Output " Option 1: Text File"
+Write-Output " Option 2: CSV File (for submission)"
+
+$FileExportType = Read-Host " Enter your choice (1-2)"
+
+switch($FileExportType) {
+    "1" {
+        try {
+            "[psiG Script]`nComputer Information Retrievel Script v1.1 (https://github.com/devjvx)" | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt
+            "`nComputer is used by: $UserName" | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            "`nScript ran at Date/Time: $ScriptDateTime `n" | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            "======================== OPERATING SYSTEM ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            "`nOperating System: $OS" | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            $ComputerOSBuild | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            "======================== MOTHERBOARD ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            $ComputerMobo | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            "======================== BIOS ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            $ComputerBIOS | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            "======================== CPU ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            $ComputerCPU  | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            "======================== MEMORY ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            $ComputerRAM  | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            # $ComputerRAM_Total  | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            "======================== STORAGE ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            $ComputerDisks  | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            "======================== GRAPHICS ======================== " | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            $ComputerGPU  | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+            "-------------------------------- END OF FILE --------------------------------" | Out-File -FilePath psiG-Output-$Username-$ScriptDateTimeNumbers.txt -Append
+        
+            Write-Output " [psiG] Done exporting to a file! See the location of the script."
+        } catch {
+            Write-Output " [psiG] Error. Unable to export consolidated data. Check file permissions."
+        }
+    }
+    "2" {
+
+    }
+    default {
+        Write-Output " Woops. You seem to have inputted an invalid choice. Please choose one :D"
+    }
 }
 
 Start-Sleep 4
